@@ -1,0 +1,21 @@
+# Turn off the initial welcome message
+startup_message off
+
+# Scroll back buffer for new windows.
+defscrollback 10000
+
+# Status bar
+hardstatus alwayslastline
+hardstatus string '%{= gk}%?%-w%?%n %t*%+w %= "%H"  %c %d-%M-%Y'
+
+# Use 256-color palette
+#attrcolor b ".I"
+#termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+#defbce on
+
+# Clear scrollback after leaving a fullscreen program
+altscreen on
+
+# Allow scrolling
+termcapinfo xterm* ti@:te@
+

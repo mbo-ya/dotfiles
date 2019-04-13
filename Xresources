@@ -1,0 +1,12 @@
+! Set a nice truetype font and its size
+xterm*faceName: monospace
+XTerm*allowBoldFonts: false
+xterm*faceSize: 11
+xterm*foreground: #eee8d5
+xterm*background: #1e2319
+
+! Every shell is a login shell
+xterm*loginshell: true
+
+! Scrollback ... a lot of it
+xterm*savelines: 1087

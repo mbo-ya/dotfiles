@@ -1,0 +1,13 @@
+# if something is not clear here, then go RTFM please!
+set linenumbers # display line numbers
+set locking # enable vim-style lock-files during editing
+set softwrap # enable soft line wrapping
+set autoindent # autoindent
+set tempfile # save automatically on exit
+set smooth # use smooth scrolling
+set tabsize 4 # sets tabs to 4
+set tabstospaces # convert tabs to spaces
+set morespace # remove the blank line below the titlebar
+set nohelp # hide banner at the bottom
+#include "/usr/share/nano/*.nanorc"
+include "/usr/share/nano-syntax-highlighting/*.nanorc"
