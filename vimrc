@@ -76,8 +76,10 @@ set formatoptions=qrn1  " Sequence of letters for automatic formatting
 set spell spelllang=en  " Enable spell checking
 set colorcolumn=+2  " Highlight two columns after text width
 
-"""""""""""""""""""""""""Abbreviations"""""""""""""""""""""
-iab #s #!/bin/env
+"""""""""""""""""""""""""language templates""""""""""""""""""""""
+autocmd BufNewFile *.py,*.bash,*.sh 0r ~/.vim/templates/script
+autocmd BufNewFile *.c 0r ~/.vim/templates/skeleton.c
+
 """""""""""""""""""""""""""Augroups"""""""""""""""""""""""""
 " Commands for language specific settings.
 " Web development settings
