@@ -1,9 +1,10 @@
 ! Set a nice truetype font and its size
-xterm*faceName: noto mono
+xterm*faceName: free mono
 XTerm*allowBoldFonts: false
-xterm*faceSize: 11
-xterm*foreground: #eee8d5
-xterm*background: #1e2319
+xterm*faceSize: 10
+xterm*foreground: #ffffff
+xterm*background: #121e1e
+xterm*termName: xterm-256color
 
 ! Every shell is a login shell
 xterm*loginshell: true

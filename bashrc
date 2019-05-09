@@ -2,8 +2,6 @@
 PATH=$PATH:/usr/sbin/
 export PATH
 
-export TERM=xterm-256color
-
 # set keyboard layout to dvorak
 #setxkbmap -layout dvorak
 
