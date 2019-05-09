@@ -9,5 +9,4 @@ set tabsize 4 # sets tabs to 4
 set tabstospaces # convert tabs to spaces
 set morespace # remove the blank line below the titlebar
 set nohelp # hide banner at the bottom
-#include "/usr/share/nano/*.nanorc"
-include "/usr/share/nano-syntax-highlighting/*.nanorc"
+include "/usr/share/nano/*.nanorc"
