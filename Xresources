@@ -1,7 +1,7 @@
 ! Set a nice truetype font and its size
-xterm*faceName: free mono
+xterm*faceName: dejavu sans mono
 XTerm*allowBoldFonts: false
-xterm*faceSize: 10
+xterm*faceSize: 11
 xterm*foreground: #ffffff
 xterm*background: #121e1e
 xterm*termName: xterm-256color
