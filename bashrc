@@ -122,6 +122,3 @@ fi
 if [ -z "$STY" ]; then
     screen -R;
 fi
-
-# proxy
-export ALL_PROXY=socks5://127.0.0.1:8118/
