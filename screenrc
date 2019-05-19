@@ -20,6 +20,34 @@ altscreen on
 # Allow scrolling
 termcapinfo xterm* ti@:te@
 
+# default windows
+screen -t shell1 1 bash
+screen -t shell2 2 bash
+screen -t ipython 3 ipython3
+screen -t ssh 4 bash
+select 0
+bind c screen 1 # window numbering starts at 1 not 0
+bind 0 select 10
+
+# get rid of silly xoff stuff
+bind s split
+
+# switch windows with F3 (prev layout) and F4 (next)
+bindkey "^[OR" prev
+bindkey "^[OS" next
+
+# split horizontally creating new shell prompt
+bind - eval split 'focus down' screen
+
+# split vertically creating new shell prompt
+bind | eval 'split -v' 'focus right' screen
+
+# Switch between regions using ctrl and arrows
+bindkey "^[[1;5D" focus left
+bindkey "^[[1;5C" focus right
+bindkey "^[[1;5A" focus up
+bindkey "^[[1;5B" focus down
+
 # F2 puts screen in resize mode. Resize regions using hjkl keys.
 bindkey "^[OQ" eval "command -c rsz" # enter resize mode
 
@@ -28,26 +56,3 @@ bind -c rsz h eval "resize -h -5" "command -c rsz"
 bind -c rsz j eval "resize -v -5" "command -c rsz"
 bind -c rsz k eval "resize -v +5" "command -c rsz"
 bind -c rsz l eval "resize -h +5" "command -c rsz"
-
-# Switch between regions using ctrl and arrows
-bindkey "^[[1;5D" focus left
-bindkey "^[[1;5C" focus right
-bindkey "^[[1;5A" focus up
-bindkey "^[[1;5B" focus down
-
-# default layout 
-split -h
-screen -t bash
-focus
-split -v
-screen -t bash
-focus
-screen -t ssh
-focus
-screen
-
-# split horizontally creating new shell prompt
-bind - eval split 'focus down' screen
-
-# split vertically creating new shell prompt
-bind | eval 'split -v' 'focus right' screen
