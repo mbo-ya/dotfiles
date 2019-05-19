@@ -119,6 +119,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# attach screen session if available, if not,
+# create it and attach
 if [ -z "$STY" ]; then
     screen -R;
 fi
