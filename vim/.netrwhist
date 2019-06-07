@@ -1,7 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/home/devuan/Documents/project_euler/pe003'
-let g:netrw_dirhist_2='/home/devuan/mit.6.001'
-let g:netrw_dirhist_3='/home/devuan/dotfiles/vim/templates'
-let g:netrw_dirhist_4='/home/devuan/insecure/screen-4.6.2/terminfo/crypto'
-let g:netrw_dirhist_5='/home/devuan/writing'
+let g:netrw_dirhist_cnt =0

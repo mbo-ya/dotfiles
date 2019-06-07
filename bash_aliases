@@ -1,6 +1,6 @@
 # user aliases
 alias ytbaudio="youtube-dl -f 140 -i"
-alias ytbvideo="youtube-dl -f 43 -i"
+alias ytbvideo="youtube-dl -f 18 -i"
 alias inetchk="ping -c 5 duckduckgo.com"
 alias less="less --quit-at-eof"
 alias PublicIP="dig +short myip.opendns.com @resolver1.opendns.com"

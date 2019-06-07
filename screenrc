@@ -6,13 +6,7 @@ defscrollback 10000
 
 # Status bar
 hardstatus alwayslastline
-#hardstatus string '%{= gk}%?%-w%?%n %t*%+w %= "%H"  %c %d-%M-%Y'
 hardstatus string '%{= kG}[%{G}%H%? %1`%?%{g}][%= %{= kw}%-w%{+b yk} %n*%t%?(%u)%? %{-}%+w %=%{g}][%{B}%m/%d %{W}%C%A%{g}]'
-
-# Use 256-color palette
-#attrcolor b ".I"
-#termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
-#defbce on
 
 # Clear scrollback after leaving a fullscreen program
 altscreen on
@@ -23,8 +17,8 @@ termcapinfo xterm* ti@:te@
 # default windows
 screen -t shell1 1 bash
 screen -t shell2 2 bash
-screen -t ipython 3 ipython3
-screen -t ssh 4 bash
+screen -t ssh 3 bash
+screen -t dict 4 bash
 select 0
 bind c screen 1 # window numbering starts at 1 not 0
 bind 0 select 10

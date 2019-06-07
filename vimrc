@@ -20,6 +20,7 @@ Plugin 'vim-auto-save'
 Plugin 'junegunn/seoul256.vim'
 Plugin 'romainl/Apprentice'
 Plugin 'sjl/badwolf'
+Plugin 'arzg/vim-wizard'
 
 " markdown preview
 Plugin 'kurocode25/mdforvim'
@@ -143,7 +144,7 @@ let g:auto_save = 1 " enable AutoSave on vim startup
 syntax on
 set background=dark
 set t_Co=256
-colorscheme apprentice
+colorscheme badwolf
 """""""""""""Emmet""""""""""""""
 " Enable emmet just for html/css files
 let g:user_emmet_install_global = 0
