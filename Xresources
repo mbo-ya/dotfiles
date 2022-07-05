@@ -1,13 +1,49 @@
-! Set a nice truetype font and its size
-xterm*faceName: noto mono
-XTerm*allowBoldFonts: false
-xterm*faceSize: 11
-xterm*foreground: #ffffff
-xterm*background: #121e1e
+xterm*font: xft:Bitstream Vera Sans Mono:regular:autohint=true:pixelsize=15
+xterm*allowBoldFonts: false
 xterm*termName: xterm-256color
-
+xterm*geometry: 80*24
 ! Every shell is a login shell
-xterm*loginshell: true
+!*loginshell: true
 
 ! Scrollback ... a lot of it
-xterm*savelines: 1087
+*savelines: 1087
+
+!--------------colorschemes--------------
+#include "/home/devuan/.Xresources.molokai"
+!#include "/home/devuan/.Xresources.gruvbox"
+!#include "/home/devuan/.Xresources.themeNine"
+!#include "/home/devuan/.Xresources.solarized"
+
+! ---------------------------------------------
+
+!!! Foreground
+URxvt*foreground: #d3d3d3
+
+!!! Background
+! Green
+URxvt*background: #1c1c1c
+! Brown
+!URxvt*background: #3F2F08
+
+!*cursorColor:  #ff0000
+!*cursorColor:  #57fd76
+!*cursorColor:  yellow
+!*cursorColor:      orange
+
+!*charClass: 33:48,35-38:48,39:43,42-47:48,58-59:48,61:48,63-64:48,126:48
+!*dynamicColors:    true
+
+!----------------------------------------------
+
+! xft settings
+Xft.antialias: true
+!Xft.rgba: rgb
+Xft.hinting: true
+Xft.hintstyle: hintfull
+
+URxvt.intensityStyles: false
+URxvt.scrollBar: false
+URxvt.font: xft:dejavusansmono:regular:autohint=true:pixelsize=15
+URxvt.transparent: true
+URxvt.shading: 17
+!URxvt.foreground: #ebdbb2

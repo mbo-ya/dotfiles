@@ -25,6 +25,9 @@ Plugin 'arzg/vim-wizard'
 " markdown preview
 Plugin 'kurocode25/mdforvim'
 
+" plugin to send some code/text to a live REPL
+Plugin 'jpalardy/vim-slime.git'
+
 " Vim for writing
 Plugin 'junegunn/limelight.vim'
 Plugin 'junegunn/goyo.vim'
@@ -77,10 +80,6 @@ set formatoptions=qrn1  " Sequence of letters for automatic formatting
 set spell spelllang=en  " Enable spell checking
 set colorcolumn=+2  " Highlight two columns after text width
 
-"""""""""""""""""""""""""language templates""""""""""""""""""""""
-autocmd BufNewFile *.py,*.bash,*.sh 0r ~/.vim/templates/script
-autocmd BufNewFile *.c 0r ~/.vim/templates/skeleton.c
-
 """""""""""""""""""""""""""Augroups"""""""""""""""""""""""""
 " Commands for language specific settings.
 " Web development settings
@@ -99,6 +98,13 @@ nnoremap ; :
 
 " map the leader key to 'space'
 let mapleader = "\<Space>"
+
+" run python scripts from inside vim "
+autocmd Filetype python imap <F5> <Esc>:w<CR>:!clear;python3 %<CR>
+
+"""""""""""""""""""""""""Abbreviations"""""""""""""""""""""
+iabbrev date- <c-r>=strftime("%Y/%m/%d %H:%M:%S")<cr>
+iabbrev pyb #!/usr/bin/env python3
 
 """"""""""""""""""""Status Line Settings"""""""""""""""""""
 " Function for calculating number of words in a file.
@@ -144,7 +150,11 @@ let g:auto_save = 1 " enable AutoSave on vim startup
 syntax on
 set background=dark
 set t_Co=256
-colorscheme badwolf
+colorscheme wizard
+
+autocmd InsertEnter * colorscheme seoul256
+autocmd InsertLeave * colorscheme apprentice
+
 """""""""""""Emmet""""""""""""""
 " Enable emmet just for html/css files
 let g:user_emmet_install_global = 0
@@ -166,3 +176,17 @@ function! SetUpMk()
     endif
 endfunction
 """""""""""""""""""""""""""""""""""""""""""""""""""""
+" load template file for specific filetype,
+" if available
+autocmd BufNewFile * silent! 0r ~/.vim/templates/%:e.tpl
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" automatic close brackets, braces
+" use ctrl+v to escape the mapping when we don't want it
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O

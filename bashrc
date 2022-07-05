@@ -1,5 +1,5 @@
 # Add bash directory to PATH
-PATH=$PATH:/usr/sbin/
+PATH=$PATH:/usr/sbin/:/home/devuan/utilities:/home/devuan/.local/bin/:
 export PATH
 
 # set keyboard layout to dvorak
@@ -49,7 +49,7 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-#force_color_prompt=yes
+force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -63,9 +63,9 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[31m\]($SHLVL)\[\033[01;33m\]\u\[\033[37m\]@\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u:\w\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\W\$ '
 fi
 unset color_prompt force_color_prompt
 
@@ -92,11 +92,11 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-#alias ll='ls -l'
-#alias la='ls -A'
+alias ll='ls -l'
+alias la='ls -AF'
 #alias l='ls -CF'
 
 # Alias definitions.
@@ -124,3 +124,14 @@ fi
 if [ -z "$STY" ]; then
     screen -R;
 fi
+
+# load ssh-agent
+# make sure we are attached to a tty
+#if /usr/bin/tty > /dev/null; then
+    # check the output of "ssh-add -l" for identities
+ #   ssh-add -l | grep 'no identities' > /dev/null
+  #  if [ $? -eq 0 ]; then
+        # load your default identity
+   #     ssh-add
+   # fi
+#fi
