@@ -21,6 +21,11 @@ Plugin 'junegunn/seoul256.vim'
 Plugin 'romainl/Apprentice'
 Plugin 'sjl/badwolf'
 Plugin 'arzg/vim-wizard'
+Plugin 'joshdick/onedark.vim'
+
+" Plugin for Python development
+Plugin 'dense-analysis/ale'
+Plugin 'Vimjas/vim-python-pep8-indent'
 
 " markdown preview
 Plugin 'kurocode25/mdforvim'
@@ -79,6 +84,7 @@ set nolist  " Set no list mode
 set formatoptions=qrn1  " Sequence of letters for automatic formatting
 set spell spelllang=en  " Enable spell checking
 set colorcolumn=+2  " Highlight two columns after text width
+set omnifunc=syntaxcomplete#Complete " Activate Vim inbuilt omni completion
 
 """""""""""""""""""""""""""Augroups"""""""""""""""""""""""""
 " Commands for language specific settings.

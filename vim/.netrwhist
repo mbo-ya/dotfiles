@@ -1,5 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =3
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/home/devuan/code/python/dsaGoodrich/ch01/exercises'
+let g:netrw_dirhist_6='/home/devuan/code/python/dsaGoodrich/ch01'
+let g:netrw_dirhist_5='/home/devuan/code/python/dsaGoodrich'
+let g:netrw_dirhist_4='/home/devuan/.config'
 let g:netrw_dirhist_3='/usr/include/video'
 let g:netrw_dirhist_2='/home/devuan/.config/conky'
 let g:netrw_dirhist_1='/home/devuan/.emacs.d/auto-save-list'
