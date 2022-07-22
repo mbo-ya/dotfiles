@@ -99,8 +99,10 @@ augroup END
 """"""""""""""""""""""""""Mappings""""""""""""""""""""""""""
 " map the escape key to 'jk'
 inoremap jk <ESC>
+
 " and colon to semi-colon
 nnoremap ; :
+inoremap dt <c-r>=strftime("%c")<cr>
 
 " map the leader key to 'space'
 let mapleader = "\<Space>"
@@ -109,8 +111,7 @@ let mapleader = "\<Space>"
 autocmd Filetype python imap <F5> <Esc>:w<CR>:!clear;python3 %<CR>
 
 """""""""""""""""""""""""Abbreviations"""""""""""""""""""""
-iabbrev date- <c-r>=strftime("%Y/%m/%d %H:%M:%S")<cr>
-iabbrev pyb #!/usr/bin/env python3
+"iabbrev date- <c-r>=strftime("%Y/%m/%d %H:%M:%S")<cr>
 
 """"""""""""""""""""Status Line Settings"""""""""""""""""""
 " Function for calculating number of words in a file.
@@ -138,7 +139,7 @@ augroup END
 set laststatus=2    " Always display a status line
 set statusline+=%<%t    " File name, cut if needed at start
 set statusline+=%M  " Modified flag, + sign
-set statusline+=%y  " File type
+set statusline+=%y  " File type 
 set statusline+=%=  " Separator from left to right justified
 set statusline+=\ %{WordCount()}\ words,    " Words in the file
 set statusline+=\ %c\ %l/%L\ lines,\ %P " Lines and file %age
@@ -158,8 +159,9 @@ set background=dark
 set t_Co=256
 colorscheme wizard
 
-autocmd InsertEnter * colorscheme seoul256
+autocmd InsertEnter * colorscheme onedark
 autocmd InsertLeave * colorscheme apprentice
+autocmd BufEnter *.py colorscheme onedark
 
 """""""""""""Emmet""""""""""""""
 " Enable emmet just for html/css files
@@ -198,7 +200,7 @@ inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
 " Commenting blocks of code
-augroup comment_blockss
+augroup comment_blocks
     autocmd!
     autocmd FileType c,cpp,java,scala  let b:comment_leader = '//'
     autocmd FileType sh,ruby,python    let b:comment_leader = '#'
@@ -208,3 +210,8 @@ augroup comment_blockss
 augroup END
 noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
 noremap <silent> ,cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
+
+" Ale configs
+let g:ale_linters = {'python': ['flake8', 'pylint']}
+let g:ale_fixers = {'python': ['yapf']}
+let g:ale_fix_on_save = 1
