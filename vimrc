@@ -17,15 +17,13 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-auto-save'
 
 " Colorscheme plugins
-Plugin 'junegunn/seoul256.vim'
-Plugin 'romainl/Apprentice'
-Plugin 'sjl/badwolf'
-Plugin 'arzg/vim-wizard'
 Plugin 'joshdick/onedark.vim'
+Plugin 'morhetz/gruvbox'
 
 " Plugin for Python development
 Plugin 'dense-analysis/ale'
 Plugin 'Vimjas/vim-python-pep8-indent'
+Plugin 'davidhalter/jedi-vim'
 
 " markdown preview
 Plugin 'kurocode25/mdforvim'
@@ -79,6 +77,7 @@ set hlsearch    " Highlight all search pattern matches
 set showmatch   " Briefly show matching brackets 
 set textwidth=78    " Maximum width of text
 set wrap    " Wraps lines longer than text width
+set breakindent " Indents word-wrapped lines as much as the 'parent' line
 set linebreak   " Wrap lines at a word boundary
 set nolist  " Set no list mode
 set formatoptions=qrn1  " Sequence of letters for automatic formatting
@@ -157,11 +156,10 @@ let g:auto_save = 1 " enable AutoSave on vim startup
 syntax on
 set background=dark
 set t_Co=256
-colorscheme wizard
+colorscheme onedark 
 
-autocmd InsertEnter * colorscheme onedark
-autocmd InsertLeave * colorscheme apprentice
-autocmd BufEnter *.py colorscheme onedark
+autocmd InsertEnter * colorscheme gruvbox
+autocmd InsertLeave * colorscheme onedark
 
 """""""""""""Emmet""""""""""""""
 " Enable emmet just for html/css files
@@ -212,6 +210,6 @@ noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<C
 noremap <silent> ,cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
 
 " Ale configs
-let g:ale_linters = {'python': ['flake8', 'pylint']}
-let g:ale_fixers = {'python': ['yapf']}
-let g:ale_fix_on_save = 1
+let g:ale_linters = {'python': ['flake8', 'pylint', 'pyflakes']}
+let g:ale_fixers = {'python': ['yapf'],}
+"let g:ale_fix_on_save = 1
